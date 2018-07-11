@@ -56,18 +56,18 @@ Orca.extension do
     end
 
     validate do
-      trigger('apt:exists', 'python-software-properties') &&
+      trigger('apt:exists', 'python-apt') &&
       trigger('apt:exists', 'software-properties-common')
     end
 
     apply do
       trigger 'apt:update'
-      trigger 'apt:install', 'python-software-properties'
+      trigger 'apt:install', 'python-apt'
       trigger 'apt:install', 'software-properties-common'
     end
 
     remove do
-      trigger 'apt:remove', 'python-software-properties'
+      trigger 'apt:remove', 'python-apt'
       trigger 'apt:remove', 'software-properties-common'
     end
   end
